@@ -1,71 +1,60 @@
-# vscode-batch-viewer-extension README
+# Batch Viewer for VS Code
 
-This is the README for your extension "vscode-batch-viewer-extension". After writing up a brief description, we recommend including the following sections.
+A Visual Studio Code extension that allows you to merge multiple files into a single virtual Markdown document, complete with directory structure visualization.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Merge multiple files into a single preview
+- Generate ASCII tree structure of selected files and folders
+- Include full folder contents in structure when a folder is selected
+- Results displayed in a virtual Markdown document
+- Code syntax highlighting in the merged view
+- Non-destructive (creates virtual file only)
 
-For example if there is an image subfolder under your extension project workspace:
+## Usage
 
-\!\[feature X\]\(images/feature-x.png\)
+1. Select multiple files and/or folders in VS Code's explorer
+2. Right-click on the selection
+3. Choose "Batch View Files" from the context menu
+4. A new virtual markdown document will open containing:
+   - ASCII tree structure of selected items
+   - Contents of all selected files, with filenames as headers
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+### Example
 
-## Requirements
+If you have this structure:
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+```
+project/
+├── src/
+│   ├── components/
+│   │   └── Button.tsx
+│   └── app.ts
+└── config.json
+```
+
+And you select `src` folder and `config.json`, you'll get a virtual markdown document with:
+
+- Complete folder structure visualization
+- Content of all files organized with headers
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+This extension contributes the following commands:
 
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+- `extension.batchViewer`: Merge selected files into virtual markdown document
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- Currently does not handle binary files
+- Large files or many files at once may impact performance
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
 ### 1.0.0
 
-Initial release of ...
+Initial release of Batch Viewer
 
-### 1.0.1
+## Contributing
 
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Contributions are welcome! Please feel free to submit a Pull Request.
